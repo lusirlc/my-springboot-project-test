@@ -1,6 +1,0 @@
-[DEBUG] 2019-03-04 00:06:05.093 [main] p.l.test.dao.StudentBeanMapper.insertSelective - ==>  Preparing: INSERT INTO t_student ( id,name ) VALUES( ?,? ) 
-[DEBUG] 2019-03-04 00:06:05.093 [main] p.l.test.dao.StudentBeanMapper.insertSelective - ==> Parameters: 20130625(Integer), 张三(String)
-[DEBUG] 2019-03-04 00:06:05.093 [main] p.l.test.dao.StudentBeanMapper.insertSelective - <==    Updates: 1
-[DEBUG] 2019-03-04 00:06:05.093 [main] p.l.test.dao.ClassroomBeanMapper.insertSelective - ==>  Preparing: INSERT INTO t_classroom ( id,name ) VALUES( ?,? ) 
-[DEBUG] 2019-03-04 00:06:05.093 [main] p.l.test.dao.ClassroomBeanMapper.insertSelective - ==> Parameters: 1005(Integer), 高一5班(String)
-[DEBUG] 2019-03-04 00:06:05.093 [main] p.l.test.dao.ClassroomBeanMapper.insertSelective - <==    Updates: 1

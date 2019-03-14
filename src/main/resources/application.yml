@@ -46,7 +46,7 @@ mybatis:
 #mapper
 mapper:
     mappers:
-        - pers.luchuan.test.dao
+        - pers.luchuan.test.base.MyMapper
     not-empty: false
     identity: MYSQL
 

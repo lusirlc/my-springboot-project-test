@@ -8,6 +8,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import pers.luchuan.test.annotation.Statistics;
+import pers.luchuan.test.base.BaseResult;
+import pers.luchuan.test.base.BaseResultGenerator;
 
 import java.util.HashMap;
 import java.util.LinkedHashMap;
@@ -24,7 +26,7 @@ public class TestRedisController {
 	private RedisTemplate redisTemplate;
 	
 	@GetMapping("/access_count")
-	public Map getTotalAccessCount() {
+	public BaseResult getTotalAccessCount() {
 		Object totalAccessCount = redisTemplate.opsForValue().get("totalAccessCount");
 		LinkedHashMap<Object, Object> map = new LinkedHashMap<>();
 		// 获取方法的访问次数
@@ -41,7 +43,7 @@ public class TestRedisController {
 		map.put("classAccessCount", classMap);
 		map.put("totalAccessCount", totalAccessCount);
 		map.put("ipAccessCount", ipAccessCount);
-		return map;
+		return BaseResultGenerator.success(map);
 	}
 	
 	@Statistics

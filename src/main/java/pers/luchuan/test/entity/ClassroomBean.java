@@ -1,8 +1,11 @@
 package pers.luchuan.test.entity;
 
+import org.hibernate.validator.constraints.NotBlank;
+
 import javax.persistence.Column;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.validation.constraints.NotNull;
 import java.util.Date;
 
 @Table(name = "t_classroom")
@@ -11,11 +14,13 @@ public class ClassroomBean {
      * 主键
      */
     @Id
+    @NotNull(message = "班级id不能为空")
     private Integer id;
 
     /**
      * 班级名称
      */
+    @NotBlank(message = "班级名称不能为空")
     private String name;
 
     /**

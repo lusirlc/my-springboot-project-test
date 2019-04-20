@@ -6,8 +6,12 @@ import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
+import org.springframework.transaction.annotation.Transactional;
 import pers.luchuan.test.dao.ArticleMapper;
 import pers.luchuan.test.entity.Article;
+import pers.luchuan.test.entity.Father;
+import pers.luchuan.test.entity.GrandSon;
+import pers.luchuan.test.entity.Son;
 
 import java.util.Arrays;
 import java.util.Collections;
@@ -16,8 +20,8 @@ import java.util.List;
 /**
  * Created by Lu Chuan on 2019/3/4
  */
-//@SpringBootTest
-//@RunWith(SpringRunner.class)
+@SpringBootTest
+@RunWith(SpringRunner.class)
 public class TempTest {
 	@Autowired
 	private ArticleMapper articleMapper;
@@ -29,11 +33,12 @@ public class TempTest {
 	}
 	
 	@Test
-	public void testTryCatch() throws Exception{
+	@Transactional
+	public void testTryCatch() {
 		System.out.println("111");
 		try {
 			int i = 1 / 0;
-		} catch (Exception e) {
+		} catch (RuntimeException e) {
 			e.printStackTrace();
 		}
 		System.out.println("222");
@@ -84,4 +89,25 @@ public class TempTest {
 		System.out.println(a);
 	}
 
+	@Test
+	public void testPolymorphism() {
+		Father father = new Father();
+		Father fSon = new Son();
+		Son son = new Son();
+		Father fGrandSon = new GrandSon();
+		Son sGrandson = new GrandSon();
+		GrandSon grandSon = new GrandSon();
+		father.fatherField = "father";
+		father.fatherMethod();
+		fSon.fatherField = "fSon";
+		fSon.fatherMethod();
+		son.fatherField = "son";
+		son.sonField = "son";
+		son.fatherMethod();
+		son.sonMethod();
+		sGrandson.fatherField = "sGrandSon";
+		sGrandson.sonField = "sGrandSon";
+		sGrandson.fatherMethod();
+		sGrandson.sonMethod();
+	}
 }

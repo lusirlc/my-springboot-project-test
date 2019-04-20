@@ -84,8 +84,7 @@ public class MyExceptionHandler {
 			if (message.length() > 1) {
 				message = message.substring(0, message.length() - 1);
 			}
-			log.info("请求参数不合法 -> {}", message);
-			return BaseResultGenerator.error(errorMessage);
+			return BaseResultGenerator.error(400,errorMessage);
 		}
 		return BaseResultGenerator.error();
 	}
@@ -109,8 +108,7 @@ public class MyExceptionHandler {
 			if (errorMessage.length() > 1) {
 				errorMessage = errorMessage.substring(0, errorMessage.length() - 1);
 			}
-			log.info("请求参数不合法 -> {}",paramName + ":" + errorMessage);
-			return BaseResultGenerator.error(errorMessage);
+			return BaseResultGenerator.error(400,errorMessage);
 		}
 		return BaseResultGenerator.error();
 	}

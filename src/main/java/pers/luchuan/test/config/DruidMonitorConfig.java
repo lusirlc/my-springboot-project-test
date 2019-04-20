@@ -13,8 +13,8 @@ import java.util.Map;
 /**
  * Created By Chuan Lu On 2019/2/27 9:11
  */
-//@Configuration
-public class DruidDBConfig {
+@Configuration
+public class DruidMonitorConfig {
 	
 	@Bean
 	public ServletRegistrationBean druidServlet() {
@@ -26,7 +26,7 @@ public class DruidDBConfig {
 		reg.addInitParameter("loginPassword", "root");
 		// 禁用HTML页面上的“Reset All”功能
 		reg.addInitParameter("resetEnable", "false");
-		//reg.addInitParameter("allow", "127.0.0.1"); //白名单
+		reg.addInitParameter("allow", "127.0.0.1"); //白名单
 		return reg;
 	}
 	

@@ -40,8 +40,11 @@
 		<!--<table tableName="t_classroom" domainObjectName="ClassroomBean">-->
 			<!--<generatedKey column="id" sqlStatement="Mysql" identity="true"/>-->
 		<!--</table>-->
-		<table tableName="article" domainObjectName="Article">
-			<generatedKey column="id" sqlStatement="Mysql" identity="true"/>
+		<!--<table tableName="article" domainObjectName="Article">-->
+			<!--<generatedKey column="id" sqlStatement="Mysql" identity="true"/>-->
+		<!--</table>-->
+		<table tableName="user_info" domainObjectName="UserBean">
+			<generatedKey column="UI_ID" sqlStatement="Mysql" identity="false"/>
 		</table>
 	</context>
 </generatorConfiguration>

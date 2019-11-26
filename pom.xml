@@ -11,7 +11,7 @@
 	<groupId>pers.luchuan</groupId>
 	<artifactId>test</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>test</name>
+	<name>my-springboot-project-test</name>
 	<description>Demo project for Spring Boot</description>
 
 	<properties>
